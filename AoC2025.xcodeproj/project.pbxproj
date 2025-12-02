@@ -48,19 +48,6 @@
 				Days/Day10.swift,
 				Days/Day11.swift,
 				Days/Day12.swift,
-				Days/Day13.swift,
-				Days/Day14.swift,
-				Days/Day15.swift,
-				Days/Day16.swift,
-				Days/Day17.swift,
-				Days/Day18.swift,
-				Days/Day19.swift,
-				Days/Day20.swift,
-				Days/Day21.swift,
-				Days/Day22.swift,
-				Days/Day23.swift,
-				Days/Day24.swift,
-				Days/Day25.swift,
 			);
 			target = 1E0FFC192EDF65BC00671C7E /* DayUnitTests */;
 		};

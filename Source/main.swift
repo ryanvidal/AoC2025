@@ -21,19 +21,6 @@ let days: [DailyPuzzle] = [
     DailyPuzzle(day: 10, solver: Day10Solver(), inputs: day10Inputs),
     DailyPuzzle(day: 11, solver: Day11Solver(), inputs: day11Inputs),
     DailyPuzzle(day: 12, solver: Day12Solver(), inputs: day12Inputs),
-    DailyPuzzle(day: 13, solver: Day13Solver(), inputs: day13Inputs),
-    DailyPuzzle(day: 14, solver: Day14Solver(), inputs: day14Inputs),
-    DailyPuzzle(day: 15, solver: Day15Solver(), inputs: day15Inputs),
-    DailyPuzzle(day: 16, solver: Day16Solver(), inputs: day16Inputs),
-    DailyPuzzle(day: 17, solver: Day17Solver(), inputs: day17Inputs),
-    DailyPuzzle(day: 18, solver: Day18Solver(), inputs: day18Inputs),
-    DailyPuzzle(day: 19, solver: Day19Solver(), inputs: day19Inputs),
-    DailyPuzzle(day: 20, solver: Day20Solver(), inputs: day20Inputs),
-    DailyPuzzle(day: 21, solver: Day21Solver(), inputs: day21Inputs),
-    DailyPuzzle(day: 22, solver: Day22Solver(), inputs: day22Inputs),
-    DailyPuzzle(day: 23, solver: Day23Solver(), inputs: day23Inputs),
-    DailyPuzzle(day: 24, solver: Day24Solver(), inputs: day24Inputs),
-    DailyPuzzle(day: 25, solver: Day25Solver(), inputs: day25Inputs),
 ]
 
 let whichDay = 2
