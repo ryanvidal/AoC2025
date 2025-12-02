@@ -36,7 +36,7 @@ let days: [DailyPuzzle] = [
     DailyPuzzle(day: 25, solver: Day25Solver(), inputs: day25Inputs),
 ]
 
-let whichDay = 1
+let whichDay = 2
 let dayToRun = days[whichDay]
 
 print(dayToRun.solveAll())

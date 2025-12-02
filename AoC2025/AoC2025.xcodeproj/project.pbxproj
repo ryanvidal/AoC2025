@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1E0FFBAC2EDF3FDD00671C7E /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 1E0FFBAB2EDF3FDD00671C7E /* Algorithms */; };
 		1E0FFBAF2EDF401900671C7E /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 1E0FFBAE2EDF401900671C7E /* Collections */; };
+		1E0FFC242EDF664A00671C7E /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 1E0FFC232EDF664A00671C7E /* Algorithms */; };
+		1E0FFC262EDF670C00671C7E /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 1E0FFC252EDF670C00671C7E /* Collections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,12 +27,57 @@
 
 /* Begin PBXFileReference section */
 		1E0FFBA02EDF3FC100671C7E /* AoC2025 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AoC2025; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E0FFC1A2EDF65BC00671C7E /* DayUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1E0FFC402EDF67B300671C7E /* Exceptions for "AoC2025" folder in "DayUnitTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DailyPuzzle.swift,
+				DailySolver.swift,
+				Days/Day1.swift,
+				Days/Day2.swift,
+				Days/Day3.swift,
+				Days/Day4.swift,
+				Days/Day5.swift,
+				Days/Day6.swift,
+				Days/Day7.swift,
+				Days/Day8.swift,
+				Days/Day9.swift,
+				Days/Day10.swift,
+				Days/Day11.swift,
+				Days/Day12.swift,
+				Days/Day13.swift,
+				Days/Day14.swift,
+				Days/Day15.swift,
+				Days/Day16.swift,
+				Days/Day17.swift,
+				Days/Day18.swift,
+				Days/Day19.swift,
+				Days/Day20.swift,
+				Days/Day21.swift,
+				Days/Day22.swift,
+				Days/Day23.swift,
+				Days/Day24.swift,
+				Days/Day25.swift,
+			);
+			target = 1E0FFC192EDF65BC00671C7E /* DayUnitTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1E0FFBA22EDF3FC100671C7E /* AoC2025 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1E0FFC402EDF67B300671C7E /* Exceptions for "AoC2025" folder in "DayUnitTests" target */,
+			);
 			path = AoC2025;
+			sourceTree = "<group>";
+		};
+		1E0FFC1B2EDF65BC00671C7E /* DayUnitTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DayUnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -45,6 +92,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1E0FFC172EDF65BC00671C7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E0FFC262EDF670C00671C7E /* Collections in Frameworks */,
+				1E0FFC242EDF664A00671C7E /* Algorithms in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -52,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				1E0FFBA22EDF3FC100671C7E /* AoC2025 */,
+				1E0FFC1B2EDF65BC00671C7E /* DayUnitTests */,
+				1E0FFC0E2EDF645900671C7E /* Frameworks */,
 				1E0FFBA12EDF3FC100671C7E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,8 +118,16 @@
 			isa = PBXGroup;
 			children = (
 				1E0FFBA02EDF3FC100671C7E /* AoC2025 */,
+				1E0FFC1A2EDF65BC00671C7E /* DayUnitTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1E0FFC0E2EDF645900671C7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +157,30 @@
 			productReference = 1E0FFBA02EDF3FC100671C7E /* AoC2025 */;
 			productType = "com.apple.product-type.tool";
 		};
+		1E0FFC192EDF65BC00671C7E /* DayUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E0FFC1E2EDF65BC00671C7E /* Build configuration list for PBXNativeTarget "DayUnitTests" */;
+			buildPhases = (
+				1E0FFC162EDF65BC00671C7E /* Sources */,
+				1E0FFC172EDF65BC00671C7E /* Frameworks */,
+				1E0FFC182EDF65BC00671C7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1E0FFC1B2EDF65BC00671C7E /* DayUnitTests */,
+			);
+			name = DayUnitTests;
+			packageProductDependencies = (
+				1E0FFC232EDF664A00671C7E /* Algorithms */,
+				1E0FFC252EDF670C00671C7E /* Collections */,
+			);
+			productName = DayUnitTests;
+			productReference = 1E0FFC1A2EDF65BC00671C7E /* DayUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -102,6 +192,9 @@
 				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					1E0FFB9F2EDF3FC100671C7E = {
+						CreatedOnToolsVersion = 26.1.1;
+					};
+					1E0FFC192EDF65BC00671C7E = {
 						CreatedOnToolsVersion = 26.1.1;
 					};
 				};
@@ -125,12 +218,30 @@
 			projectRoot = "";
 			targets = (
 				1E0FFB9F2EDF3FC100671C7E /* AoC2025 */,
+				1E0FFC192EDF65BC00671C7E /* DayUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		1E0FFC182EDF65BC00671C7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1E0FFB9C2EDF3FC100671C7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E0FFC162EDF65BC00671C7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -286,6 +397,42 @@
 			};
 			name = Release;
 		};
+		1E0FFC1F2EDF65BC00671C7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5QM9NFMW9L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thevidals.DayUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1E0FFC202EDF65BC00671C7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5QM9NFMW9L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thevidals.DayUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -303,6 +450,15 @@
 			buildConfigurations = (
 				1E0FFBA82EDF3FC100671C7E /* Debug */,
 				1E0FFBA92EDF3FC100671C7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E0FFC1E2EDF65BC00671C7E /* Build configuration list for PBXNativeTarget "DayUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E0FFC1F2EDF65BC00671C7E /* Debug */,
+				1E0FFC202EDF65BC00671C7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -335,6 +491,16 @@
 			productName = Algorithms;
 		};
 		1E0FFBAE2EDF401900671C7E /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E0FFBAD2EDF401900671C7E /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		1E0FFC232EDF664A00671C7E /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E0FFBAA2EDF3FDD00671C7E /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		1E0FFC252EDF670C00671C7E /* Collections */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1E0FFBAD2EDF401900671C7E /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = Collections;
