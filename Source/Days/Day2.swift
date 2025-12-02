@@ -6,7 +6,7 @@ struct Day2Solver: DailySolver {
     
     public func parseInput(_ input: String) -> CalculationInput {
         let inputRanges = input.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: ",")
-        debugPrint(inputRanges)
+        
         return inputRanges.compactMap { inputRange in
             let bounds = inputRange.components(separatedBy: "-").map({ $0.trimmingCharacters(in: .whitespacesAndNewlines) }).compactMap(Int.init)
             guard bounds.count == 2 else { fatalError("Misformatted input range: \(inputRange)") }

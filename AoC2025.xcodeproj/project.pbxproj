@@ -31,11 +31,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1E0FFC402EDF67B300671C7E /* Exceptions for "AoC2025" folder in "DayUnitTests" target */ = {
+		1E0FFC402EDF67B300671C7E /* Exceptions for "Source" folder in "DayUnitTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				DailyPuzzle.swift,
-				DailySolver.swift,
+				DailyFramework/DailyPuzzle.swift,
+				DailyFramework/DailySolver.swift,
 				Days/Day1.swift,
 				Days/Day2.swift,
 				Days/Day3.swift,
@@ -67,12 +67,12 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		1E0FFBA22EDF3FC100671C7E /* AoC2025 */ = {
+		1E0FFBA22EDF3FC100671C7E /* Source */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				1E0FFC402EDF67B300671C7E /* Exceptions for "AoC2025" folder in "DayUnitTests" target */,
+				1E0FFC402EDF67B300671C7E /* Exceptions for "Source" folder in "DayUnitTests" target */,
 			);
-			path = AoC2025;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		1E0FFC1B2EDF65BC00671C7E /* DayUnitTests */ = {
@@ -107,7 +107,7 @@
 		1E0FFB972EDF3FC000671C7E = {
 			isa = PBXGroup;
 			children = (
-				1E0FFBA22EDF3FC100671C7E /* AoC2025 */,
+				1E0FFBA22EDF3FC100671C7E /* Source */,
 				1E0FFC1B2EDF65BC00671C7E /* DayUnitTests */,
 				1E0FFC0E2EDF645900671C7E /* Frameworks */,
 				1E0FFBA12EDF3FC100671C7E /* Products */,
@@ -146,7 +146,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				1E0FFBA22EDF3FC100671C7E /* AoC2025 */,
+				1E0FFBA22EDF3FC100671C7E /* Source */,
 			);
 			name = AoC2025;
 			packageProductDependencies = (
