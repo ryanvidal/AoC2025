@@ -23,7 +23,8 @@ let days: [DailyPuzzle] = [
     DailyPuzzle(day: 12, solver: Day12Solver(), inputs: day12Inputs),
 ]
 
-let whichDay = 2
+let whichDay = 3
 let dayToRun = days[whichDay]
+let partsToRun: [PuzzlePart] = .allPart2
 
-print(dayToRun.solveAll())
+print(dayToRun.solve(partsToRun))

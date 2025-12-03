@@ -1,0 +1,35 @@
+{
+  "configurations" : [
+    {
+      "id" : "009BEBE1-3D7A-42E2-B01C-6A4DEB13B762",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:AoC2025.xcodeproj",
+      "identifier" : "1E0FFB9F2EDF3FC100671C7E",
+      "name" : "AoC2025"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "selectedTags" : {
+        "tags" : [
+          ".currentDay"
+        ]
+      },
+      "target" : {
+        "containerPath" : "container:AoC2025.xcodeproj",
+        "identifier" : "1E0FFC192EDF65BC00671C7E",
+        "name" : "DayUnitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

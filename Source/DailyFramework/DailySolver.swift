@@ -12,6 +12,7 @@ public protocol DailySolver {
     func parseInput(_ input: String) -> CalculationInput
     func calculatePart1(_ input: CalculationInput) -> Int?
     func calculatePart2(_ input: CalculationInput) -> Int?
+    init()
 }
 
 public extension DailySolver {

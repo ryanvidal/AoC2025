@@ -48,8 +48,40 @@
 				Days/Day10.swift,
 				Days/Day11.swift,
 				Days/Day12.swift,
+				Days/UnitTests/DailyTests.swift,
+				Days/UnitTests/Day1Tests.swift,
+				Days/UnitTests/Day2Tests.swift,
+				Days/UnitTests/Day3Tests.swift,
+				Days/UnitTests/Day4Tests.swift,
+				Days/UnitTests/Day5Tests.swift,
+				Days/UnitTests/Day6Tests.swift,
+				Days/UnitTests/Day7Tests.swift,
+				Days/UnitTests/Day8Tests.swift,
+				Days/UnitTests/Day9Tests.swift,
+				Days/UnitTests/Day10Tests.swift,
+				Days/UnitTests/Day11Tests.swift,
+				Days/UnitTests/Day12Tests.swift,
 			);
 			target = 1E0FFC192EDF65BC00671C7E /* DayUnitTests */;
+		};
+		1EFA38F32EDF814000E8A624 /* Exceptions for "Source" folder in "AoC2025" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Days/UnitTests/DailyTests.swift,
+				Days/UnitTests/Day1Tests.swift,
+				Days/UnitTests/Day2Tests.swift,
+				Days/UnitTests/Day3Tests.swift,
+				Days/UnitTests/Day4Tests.swift,
+				Days/UnitTests/Day5Tests.swift,
+				Days/UnitTests/Day6Tests.swift,
+				Days/UnitTests/Day7Tests.swift,
+				Days/UnitTests/Day8Tests.swift,
+				Days/UnitTests/Day9Tests.swift,
+				Days/UnitTests/Day10Tests.swift,
+				Days/UnitTests/Day11Tests.swift,
+				Days/UnitTests/Day12Tests.swift,
+			);
+			target = 1E0FFB9F2EDF3FC100671C7E /* AoC2025 */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -57,14 +89,10 @@
 		1E0FFBA22EDF3FC100671C7E /* Source */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				1EFA38F32EDF814000E8A624 /* Exceptions for "Source" folder in "AoC2025" target */,
 				1E0FFC402EDF67B300671C7E /* Exceptions for "Source" folder in "DayUnitTests" target */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		1E0FFC1B2EDF65BC00671C7E /* DayUnitTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DayUnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -95,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				1E0FFBA22EDF3FC100671C7E /* Source */,
-				1E0FFC1B2EDF65BC00671C7E /* DayUnitTests */,
 				1E0FFC0E2EDF645900671C7E /* Frameworks */,
 				1E0FFBA12EDF3FC100671C7E /* Products */,
 			);
@@ -155,9 +182,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				1E0FFC1B2EDF65BC00671C7E /* DayUnitTests */,
 			);
 			name = DayUnitTests;
 			packageProductDependencies = (

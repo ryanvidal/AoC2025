@@ -12,6 +12,40 @@ public enum PuzzlePart: CaseIterable {
     case part1
     case part2Example
     case part2
+    
+    var part1: Bool {
+        switch self {
+        case .part1Example, .part1: true
+        default: false
+        }
+    }
+    var part2: Bool {
+        switch self {
+        case .part2Example, .part2: true
+        default: false
+        }
+    }
+    var example: Bool {
+        switch self {
+        case .part1Example, .part2Example: true
+        default: false
+        }
+    }
+}
+
+extension [PuzzlePart] {
+    static var all: [PuzzlePart] {
+        PuzzlePart.allCases
+    }
+    static var examples: [PuzzlePart] {
+        .all.filter(\.example)
+    }
+    static var allPart1: [PuzzlePart] {
+        .all.filter(\.part1)
+    }
+    static var allPart2: [PuzzlePart] {
+        .all.filter(\.part2)
+    }
 }
 
 public struct DailyPuzzleInputs {
@@ -76,31 +110,47 @@ public struct DailyPuzzle {
         inputs.part2ExampleAnswer
     }
     
-    private func solvePart1() -> String {
-        """
-        Test answer:  \(solve(.part1Example))
-        Final answer: \(solve(.part1))
-        """
-    }
-    private func solvePart2() -> String {
-        """
-        Test answer:  \(solve(.part2Example))
-        Final answer: \(solve(.part2))
-        """
+    public func solveAll() -> String {
+        solve(.all)
     }
     
-    public func solveAll() -> String {
-        """
-        Results of Day \(day):
-        ------------------
-        Part 1
-        ---
-        \(solvePart1())
-        ---
-        Part 2
-        ---
-        \(solvePart2())
-        ------------------
-        """
+    public func solve(_ parts: [PuzzlePart]) -> String {
+        var output = "Results of Day \(day):\n"
+        
+        if parts.contains(where: \.part1) {
+            output.append("""
+                ---
+                Part 1
+                ---
+                
+                """)
+            if parts.contains(.part1Example) {
+                output.append("Test answer:  \(solve(.part1Example))\n")
+            }
+            if parts.contains(.part1) {
+                output.append("Final answer: \(solve(.part1))\n")
+            }
+        }
+        
+        if parts.contains(where: \.part2) {
+            output.append("""
+                ---
+                Part 2
+                ---
+                
+                """)
+            if parts.contains(.part2Example) {
+                output.append("Test answer:  \(solve(.part2Example))\n")
+            }
+            if parts.contains(.part2) {
+                output.append("Final answer: \(solve(.part2))\n")
+            }
+        }
+        
+        output.append("""
+            
+            """)
+        
+        return output
     }
 }

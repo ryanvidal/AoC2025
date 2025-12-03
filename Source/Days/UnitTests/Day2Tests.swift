@@ -7,8 +7,17 @@
 
 import Testing
 
-struct Day2Tests {
-
+@Suite() struct Day2Tests: DailyTests {
+    let solver = Day2Solver()
+    let inputs = day2Inputs
+    
+    @Test func part1Test() throws {
+        #expect(part1Result() == inputs.part1ExampleAnswer)
+    }
+    @Test func part2Test() throws {
+        #expect(part2Result() == inputs.part2ExampleAnswer)
+    }
+    
     enum ExtraSilliness {
         static var cases: [(Int, Bool)] = [
             // 1 digit
