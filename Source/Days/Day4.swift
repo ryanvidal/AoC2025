@@ -2,49 +2,51 @@ import Collections
 import Foundation
 
 struct Day4Solver: DailySolver {
-    public typealias CalculationInput = Grid<Int>
+    /// Inputs to calculations will be a sparse grid of sets of neighboring locations
+    public typealias CalculationInput = Grid<Set<Pair>>
     
     public func parseInput(_ input: String) -> CalculationInput {
         let inputLines = input.components(separatedBy: "\n")
-        var wall: Grid<Int> = .init()
+        var wall: Grid<Set<Pair>> = .init()
         
         for (y, line) in inputLines.enumerated() {
             for (x, char) in line.enumerated() {
                 if char == "@" {
-                    wall[x, y] = 0
+                    let point = Pair(x, y)
+                    wall[point] = []
+                    for neighbor in wall.getNeighboringPoints(of: point) {
+                        wall[point]!.insert(neighbor)
+                        wall[neighbor]!.insert(point)
+                    }
                 }
             }
-        }
-        
-        for rollLocation in wall.points {
-            wall[rollLocation] = wall.getNeighbors(of: rollLocation).count
         }
         
         return wall
     }
     
     public func calculatePart1(_ input: CalculationInput) -> Int? {
-        return input.getPoints(where: { $0 < 4 }).count
+        return input.getPoints(where: { $0.count < 4 }).count
     }
     
+    /// Removes points in order using an ordered set where the count of neighbors is less than four.
+    /// The ordered set is used as a queue, adding new neighbors that fall below four neighbors during removal to be processed later.
     public func calculatePart2(_ input: CalculationInput) -> Int? {
         var wall = input
-        var removable = OrderedSet<Pair>(wall.getPoints(where: { $0 < 4 }))
+        var removable = OrderedSet<Pair>(wall.getPoints(where: { $0.count < 4 }))
         var removed = [Pair]()
         
         while removable.count > 0 {
             let point = removable.removeFirst()
+            guard let neighbors = wall[point] else { continue }
             
             removed.append(point)
             wall[point] = nil
             
-            for neighbor in wall.getNeighboringPoints(of: point) {
-                guard let count = wall[neighbor] else {
-                    continue
-                }
-                
-                wall[neighbor] = count - 1
-                if count - 1 < 4 {
+            for neighbor in neighbors {
+                guard wall[neighbor] != nil else { continue }
+                wall[neighbor]!.remove(point)
+                if wall[neighbor]!.count < 4 {
                     removable.append(neighbor)
                 }
             }
