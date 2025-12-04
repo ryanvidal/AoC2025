@@ -6,7 +6,7 @@
 
 import Testing
 
-@Suite(.disabled()) struct Day4Tests: DailyTests {
+@Suite(.tags(.currentDay)) struct Day4Tests: DailyTests {
     let solver = Day4Solver()
     let inputs = day4Inputs
 

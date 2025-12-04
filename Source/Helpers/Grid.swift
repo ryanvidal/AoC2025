@@ -51,15 +51,36 @@ public struct Grid<Element> {
     }
 
     var xRange: ClosedRange<Int> {
-        let (min, max) = points.map { $0.x }.minAndMax()!
+        let (min, max) = points.map { $0.x }.minAndMax() ?? (0,0)
 
         return min...max
     }
 
     var yRange: ClosedRange<Int> {
-        let (min, max) = points.map { $0.y }.minAndMax()!
+        let (min, max) = points.map { $0.y }.minAndMax() ?? (0,0)
 
         return min...max
+    }
+    
+    /// Returns all existing neighbors of the 8 surrounding points
+    func getNeighbors(of point: Pair) -> [Element] {
+        point.neighbors(bounds: (xRange, yRange)).compactMap {
+            grid[$0]
+        }
+    }
+    
+    func getNeighboringPoints(of point: Pair) -> [Pair] {
+        point.neighbors(bounds: (xRange, yRange)).filter { self[$0] != nil }
+    }
+    
+    func getOrthogonalNeighbors(of point: Pair) -> [Element] {
+        point.orthogonalNeighbors(bounds: (xRange, yRange)).compactMap {
+            grid[$0]
+        }
+    }
+    
+    func getNeighboringOrthogonalPoints(of point: Pair) -> [Pair] {
+        point.orthogonalNeighbors(bounds: (xRange, yRange)).filter { self[$0] != nil }
     }
 
     subscript(point: Pair) -> Element? {
@@ -69,6 +90,16 @@ public struct Grid<Element> {
 
         set(newValue) {
             grid[point] = newValue
+        }
+    }
+    
+    subscript(x: Int, y: Int) -> Element? {
+        get {
+            return grid[Pair(x, y)]
+        }
+        
+        set(newValue) {
+            grid[Pair(x, y)] = newValue
         }
     }
 }
