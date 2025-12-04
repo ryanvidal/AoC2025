@@ -1,10 +1,3 @@
-//
-//  DayUnitTests.swift
-//  DayUnitTests
-//
-//  Created by Ryan Vidal on 12/2/25.
-//
-
 import Testing
 
 @Suite() struct Day2Tests: DailyTests {

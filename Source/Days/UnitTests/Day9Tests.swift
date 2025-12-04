@@ -1,10 +1,3 @@
-//
-//  Day9Tests.swift
-//  AoC2025
-//
-//  Created by Ryan Vidal on 12/2/25.
-//
-
 import Testing
 
 @Suite(.disabled()) struct Day9Tests: DailyTests {

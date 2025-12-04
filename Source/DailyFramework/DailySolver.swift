@@ -1,10 +1,3 @@
-//
-//  DailySolver.swift
-//  AoC2021
-//
-//  Created by Ryan Vidal on 12/1/21.
-//
-
 import Foundation
 
 public protocol DailySolver {
@@ -16,21 +9,21 @@ public protocol DailySolver {
 }
 
 public extension DailySolver {
-    func checkPart1Example(_ input: String, against expectedValue: Int) -> String {
-        guard let result = calculatePart1(parseInput(input)) else { return "No answer!" }
-        return "\(result) \(expectedValue == result ? "✅" : "❌")"
-    }
-    func checkPart2Example(_ input: String, against expectedValue: Int) -> String {
-        guard let result = calculatePart2(parseInput(input)) else { return "No answer!" }
-        return "\(result) \(expectedValue == result ? "✅" : "❌")"
-    }
-    func getPart1ResultString(from stringInput: String) -> String {
-        guard let result = calculatePart1(parseInput(stringInput)) else { return "No answer!" }
-            return "\(result)"
+    func result(of part: PuzzlePart, using inputs: DailyPuzzleInputs) -> Int? {
+        if part.isInPart1 {
+            return calculatePart1(parseInput(inputs.getInput(for: part)))
+        } else {
+            return calculatePart2(parseInput(inputs.getInput(for: part)))
         }
+    }
     
-    func getPart2ResultString(from stringInput: String) -> String {
-        guard let result = calculatePart2(parseInput(stringInput)) else { return "No answer!" }
+    func resultString(of part: PuzzlePart, using inputs: DailyPuzzleInputs) -> String {
+        guard let result = result(of: part, using: inputs) else { return "No answer!" }
+        
+        if let expectedValue = inputs.getExpectedValue(for: part) {
+            return "\(result) \(expectedValue == result ? "✅" : "❌")"
+        }
+        
         return "\(result)"
     }
 }

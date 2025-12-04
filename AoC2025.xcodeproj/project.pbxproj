@@ -90,6 +90,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				DailyFramework/DailyPuzzle.swift,
+				DailyFramework/DailyPuzzleInputs.swift,
 				DailyFramework/DailySolver.swift,
 				Days/Day1.swift,
 				Days/Day2.swift,
@@ -116,6 +117,7 @@
 				Days/UnitTests/Day10Tests.swift,
 				Days/UnitTests/Day11Tests.swift,
 				Days/UnitTests/Day12Tests.swift,
+				PuzzleDay.swift,
 			);
 			target = 1E0FFC192EDF65BC00671C7E /* DayUnitTests */;
 		};

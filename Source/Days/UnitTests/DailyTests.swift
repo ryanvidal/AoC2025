@@ -1,10 +1,3 @@
-//
-//  DailyTests.swift
-//  AoC2025
-//
-//  Created by Ryan Vidal on 12/2/25.
-//
-
 import Testing
 
 protocol DailyTests<Solver> {
@@ -15,13 +8,11 @@ protocol DailyTests<Solver> {
 
 extension DailyTests {
     public func part1Result() -> Int? {
-        let input = solver.parseInput(inputs.part1Example)
-        return solver.calculatePart1(input)
+        solver.result(of: .part1Example, using: inputs)
     }
 
     public func part2Result() -> Int? {
-        let input = solver.parseInput(inputs.part2Example ?? inputs.part1Example)
-        return solver.calculatePart2(input)
+        solver.result(of: .part1Example, using: inputs)
     }
 }
 
