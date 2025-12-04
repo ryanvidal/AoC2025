@@ -7,14 +7,14 @@
 
 import Foundation
 
-public struct Point3D: Hashable {
+public struct Point3D: Hashable, CustomDebugStringConvertible {
     let val: (Int, Int, Int)
 
-    init(_ x: Int, _ y: Int, _ z: Int) {
+    public init(_ x: Int, _ y: Int, _ z: Int) {
         val = (x, y, z)
     }
 
-    init?(_ input: String) {
+    public init?(_ input: String) {
         let components = input.components(separatedBy: [",", " "])
         guard components.count == 3 else { return nil }
         guard let x = Int(components[0]),
@@ -46,8 +46,12 @@ public struct Point3D: Hashable {
         return val.2
     }
 
-    public var stringValue: String {
+    public var debugDescription: String {
         "(\(x), \(y), \(z))"
+    }
+    
+    public var stringValue: String {
+        debugDescription
     }
 }
 

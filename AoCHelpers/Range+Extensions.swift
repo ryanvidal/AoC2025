@@ -5,7 +5,7 @@
 //  Created by Ryan Vidal on 8/8/25.
 //
 
-import Collections
+internal import Collections
 import Foundation
 
 extension Range where Bound: Comparable {

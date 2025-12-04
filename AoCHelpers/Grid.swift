@@ -5,28 +5,50 @@
 //  Created by Ryan Vidal on 12/5/22.
 //
 
-import Algorithms
+internal import Algorithms
 import Foundation
 
 public struct Grid<Element> {
-    var grid: [Pair: Element]
-
-    init() {
+    internal var grid: [Pair: Element]
+    
+    public init() {
         grid = [:]
     }
-
-    init(_ grid: [Pair: Element]) {
+    
+    public init(_ grid: [Pair: Element]) {
         self.grid = grid
     }
-
+    
     mutating func setValue(x: Int, y: Int, to value: Element) {
-        setValue(at: Pair(x, y), to: value)
+        grid[Pair(x, y)] = value
     }
-
+    
     mutating func setValue(at location: Pair, to value: Element) {
         grid[location] = value
     }
+    
+    public subscript(point: Pair) -> Element? {
+        get {
+            return grid[point]
+        }
 
+        set(newValue) {
+            grid[point] = newValue
+        }
+    }
+    
+    public subscript(x: Int, y: Int) -> Element? {
+        get {
+            return grid[Pair(x, y)]
+        }
+        
+        set(newValue) {
+            grid[Pair(x, y)] = newValue
+        }
+    }
+}
+
+public extension Grid {
     func getPoints(where predicate: (Element) -> Bool) -> [Pair] {
         return grid
             .filter { predicate($0.value) }
@@ -69,37 +91,20 @@ public struct Grid<Element> {
         }
     }
     
+    /// Returns neighboring points that contain Elements
     func getNeighboringPoints(of point: Pair) -> [Pair] {
         point.neighbors(bounds: (xRange, yRange)).filter { self[$0] != nil }
     }
     
+    /// Returns all existing neighbors of the 4 orthogonal points
     func getOrthogonalNeighbors(of point: Pair) -> [Element] {
         point.orthogonalNeighbors(bounds: (xRange, yRange)).compactMap {
             grid[$0]
         }
     }
     
+    /// Returns existing neighbors in the 4 orthogonal points
     func getNeighboringOrthogonalPoints(of point: Pair) -> [Pair] {
         point.orthogonalNeighbors(bounds: (xRange, yRange)).filter { self[$0] != nil }
-    }
-
-    subscript(point: Pair) -> Element? {
-        get {
-            return grid[point]
-        }
-
-        set(newValue) {
-            grid[point] = newValue
-        }
-    }
-    
-    subscript(x: Int, y: Int) -> Element? {
-        get {
-            return grid[Pair(x, y)]
-        }
-        
-        set(newValue) {
-            grid[Pair(x, y)] = newValue
-        }
     }
 }

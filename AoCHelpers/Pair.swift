@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct Pair: Hashable {
+public struct Pair: Hashable, CustomDebugStringConvertible {
     let val: (Int, Int)
 
-    init(_ x: Int, _ y: Int) {
+    public init(_ x: Int, _ y: Int) {
         val = (x, y)
     }
 
@@ -31,8 +31,12 @@ public struct Pair: Hashable {
         return val.1
     }
 
-    public var stringValue: String {
+    public var debugDescription: String {
         "(\(x), \(y))"
+    }
+    
+    public var stringValue: String {
+        debugDescription
     }
 }
 

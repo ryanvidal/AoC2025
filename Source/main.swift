@@ -25,6 +25,6 @@ let days: [DailyPuzzle] = [
 
 let whichDay = 4
 let dayToRun = days[whichDay]
-let partsToRun: [PuzzlePart] = .allPart2
+let partsToRun: [PuzzlePart] = .examples
 
 print(dayToRun.solve(partsToRun))
