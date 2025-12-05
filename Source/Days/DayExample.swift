@@ -5,18 +5,16 @@ struct DayExampleSolver: DailySolver {
     
     public func parseInput(_ input: String) -> CalculationInput {
         let inputLines = input.components(separatedBy: "\n")
-        return inputLines.compactMap(Int.init)
+        let convertedInput = inputLines.compactMap(Int.init)
+        
+        return convertedInput
     }
     
     public func calculatePart1(_ input: CalculationInput) -> Int? {
-        // Part 1 calculation here
-
         return nil
     }
     
     public func calculatePart2(_ input: CalculationInput) -> Int? {
-        // Part 2 calculation here
-
         return nil
     }
 }

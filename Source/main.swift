@@ -1,6 +1,6 @@
 import Foundation
 
-let today = PuzzleDay.day4
-let partsToSolve: [PuzzlePart] = .examples
+let today = PuzzleDay.day5
+let partsToSolve: [PuzzlePart] = .all
 
 print(today.puzzle.solve(partsToSolve))
