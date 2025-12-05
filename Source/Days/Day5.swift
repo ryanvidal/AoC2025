@@ -2,52 +2,29 @@ import Foundation
 
 struct Day5Solver: DailySolver {
     struct InventoryManagement {
-        var freshRanges: [ClosedRange<Int>]
+        var freshRanges: RangeSet<Int>
         let availableIngredients: Set<Int>
         
         init(_ input: String) {
             let inputLines = input.components(separatedBy: "\n")
             let sectionSeparatorIndex = inputLines.firstIndex(of: "")!
             
-            self.freshRanges = inputLines[0..<sectionSeparatorIndex].map {
-                let bounds = $0.split(separator: "-").map({ $0.trimmingCharacters(in: .whitespacesAndNewlines)}).compactMap(Int.init)
-                return bounds[0]...bounds[1]
-            }
+            self.freshRanges = .init(
+                inputLines[0..<sectionSeparatorIndex].map {
+                    let bounds = $0.split(separator: "-").map({ $0.trimmingCharacters(in: .whitespacesAndNewlines)}).compactMap(Int.init)
+                    return Range<Int>(bounds[0]...bounds[1])
+                }
+            )
             
             self.availableIngredients = Set(inputLines[sectionSeparatorIndex+1..<inputLines.endIndex].compactMap(Int.init))
-            
-            // Added for Part 2 with the added benefit of reducing processing time of Part 1
-            compactRanges()
-        }
-        
-        mutating func compactRanges() {
-            var compactedRanges = [ClosedRange<Int>]()
-            var rangesToConsider = Set(freshRanges)
-            
-            while !rangesToConsider.isEmpty {
-                let range = rangesToConsider.removeFirst()
-
-                var newRange = range
-                
-                while let intersectingRange = rangesToConsider.first(where: { $0.overlaps(newRange) }) {
-                    rangesToConsider.remove(intersectingRange)
-                    
-                    newRange = min(newRange.lowerBound, intersectingRange.lowerBound)...max(newRange.upperBound, intersectingRange.upperBound)
-                }
-                
-                compactedRanges.append(newRange)
-            }
-            
-            freshRanges = compactedRanges
         }
         
         var availableFreshIngredientCount: Int {
-            availableIngredients.filter({ id in freshRanges.contains(where: { $0.contains(id) }) }).count
+            availableIngredients.filter({ id in freshRanges.contains(id) }).count
         }
         
         var totalPossibleFreshIngredientCount: Int {
-            // Relies on ranges being compacted before computing
-            freshRanges.map(\.count).reduce(0, +)
+            freshRanges.ranges.map(\.count).reduce(0, +)
         }
     }
     
@@ -62,8 +39,7 @@ struct Day5Solver: DailySolver {
     }
     
     public func calculatePart2(_ input: CalculationInput) -> Int? {
-        var inventory = input
-        return inventory.totalPossibleFreshIngredientCount
+        return input.totalPossibleFreshIngredientCount
     }
 }
 
